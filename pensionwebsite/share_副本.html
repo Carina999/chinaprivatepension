@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Epic Pension Score</title>
+    <style>
+        /* Minified Tailwind CSS subset for mobile optimization */
+        *,::before,::after{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}html{line-height:1.5;-webkit-text-size-adjust:100%}body{margin:0;min-height:100vh;font-family:Inter,sans-serif;background:linear-gradient(135deg,#e0f2fe,#f3e8ff);display:flex;justify-content:center;align-items:center;color:#1f2937}h1,h2{font-weight:700}.container{max-width:1280px;margin-left:auto;margin-right:auto;padding:1rem}.text-center{text-align:center}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-2xl{font-size:1.5rem;line-height:2rem}@media (max-width:640px){.text-3xl{font-size:1.5rem}.text-2xl{font-size:1.25rem}}.font-extrabold{font-weight:800}.text-white{color:#fff}.text-blue-600{color:#2563eb}.text-gray-600{color:#4b5563}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.drop-shadow-lg{filter:drop-shadow(0 10px 8px rgba(0,0,0,0.04))}.text-base{font-size:1rem;line-height:1.5rem}.text-sm{font-size:.875rem;line-height:1.25rem}@media (max-width:640px){.text-base{font-size:.875rem}}.opacity-90{opacity:.9}.flex{display:flex}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-center{justify-content:center}.gap-4{gap:1rem}.gap-2{gap:.5rem}.bg-white{background-color:#fff}.p-4{padding:1rem}.p-3{padding:.75rem}.rounded-xl{border-radius:.75rem}.rounded-full{border-radius:9999px}.shadow-md{box-shadow:0 4px 6px -1px rgba(0,0,0,0.1)}.shadow-lg{box-shadow:0 10px 15px -3px rgba(0,0,0,0.1)}.border{border-width:1px}.border-blue-300{border-color:#93c5fd}.border-purple-300{border-color:#d8b4fe}.font-bold{font-weight:700}.w-full{width:100%}.max-w-md{max-width:28rem}.mt-8{margin-top:2rem}.mt-4{margin-top:1rem}.btn{background:#60a5fa;color:#fff;padding:.75rem 1.5rem;border-radius:9999px;font-weight:600;transition:background .3s ease}.btn:hover{background:#3b82f6}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-3{padding-top:.75rem;padding-bottom:.75rem}.circle{width:8rem;height:8rem;display:flex;justify-content:center;align-items:center;border-radius:9999px}@media (min-width:640px){.circle{width:10rem;height:10rem}}.list-disc{list-style-type:disc}.list-inside{list-style-position:inside}
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+</head>
+<body>
+    <div class="container flex flex-col items-center">
+        <!-- Header -->
+        <h1 class="text-3xl font-extrabold text-center text-black mb-4 drop-shadow-lg">
+          My Pension Quest Recap! 
+        </h1>
+        <p class="text-center text-base text-black mb-8 opacity-90">
+            Your retirement journey is 🔥! Share it and inspire your peers! 😎
+        </p>
+
+        <!-- Retirement Readiness Report -->
+        <div class="bg-white p-4 rounded-xl shadow-lg max-w-md w-full">
+            
+            <!-- Event Summary (Rounded Rectangle) -->
+            <div class="p-3 rounded-xl border border-blue-300 shadow-md mb-4">
+                <p class="text-base font-bold text-gray-600">Thanks to my private pension plan, I confidently handled these life twists:</p>
+                <p id="eventList" class="text-sm text-gray-600">Lottery Win, Inflation, Illness</p>
+                <p class="text-sm text-gray-600 mt-2">My pension plan locks in <strong>+¥5,000/month</strong> for a chill retirement! 🏖️</p>
+            </div>
+            
+            <!-- Savings Goal (Circle) -->
+            <div class="flex items-center justify-center">
+              <div class="circle bg-blue border border-purple-300 shadow-md mx-auto mb-4 flex items-center justify-center" 
+                   style="width: 400px; height: 100px;"> <!-- Increased from typical 200px -->
+                  <p class="text-base text-gray-600 text-center px-6"> <!-- Larger text and padding -->
+                      Save <strong>¥12,000/year</strong> in my private pension account for a nice retirement! 💰
+                  </p>
+              </div>
+          </div>
+            
+            <!-- Dream Outcome (Rounded Rectangle) -->
+            <div class="p-3 rounded-xl border border-blue-300 shadow-md">
+                <p class="text-base font-bold text-gray-600">💰 With private pension, at 60 years old: </p>
+                <ul class="text-sm text-gray-600 list-disc list-inside">
+                    <li>Vibing by the beach 🌊</li>
+                    <li>Immune to tax hikes and policy shifts 🏡</li>
+                    <li>No worries even if I retire abroad! ✈️</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="flex flex-col items-center mt-8 gap-4">
+            <div class="flex flex-col sm:flex-row gap-2">
+                <button class="btn px-6 py-3 text-sm" onclick="shareReport()">Share with Friends! 🚀</button>
+                <a href="simulation.html" class="btn px-6 py-3 text-sm">Replay the Quest! 🔁</a>
+            </div>
+            <div class="flex gap-4 mt-4">
+                <a href="index.html" class="text-black text-sm">Back to Home 🏠</a>
+                <a href="products.html" class="text-black text-sm">Explore Products 📈</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Load events from localStorage
+        const events = JSON.parse(localStorage.getItem('pensionEvents')) || [
+            "Lottery Win", "Inflation", "Illness"
+        ];
+        document.getElementById('eventList').textContent = events.join(', ');
+
+        // Share function (simulated)
+        function shareReport() {
+            const report = `📢 My Pension Quest! 🎉\nI tackled ${events.join(', ')} and my pension plan scores +¥5,000/month! 🤑\nSave ¥12,000/year to vibe by the beach, live luxe, and jet-set worry-free! 🌊🏡✈️\nJoin me at pensionwebsite! #PensionQuest`;
+            alert("Ready to share:\n\n" + report + "\n\n(Copy this to WeChat or Douyin!)");
+        }
+
+        // Animate elements on load
+        gsap.from(".bg-white", { opacity: 0, y: 20, duration: 0.8 });
+        gsap.from(".circle", { opacity: 0, scale: 0.5, duration: 0.8, delay: 0.2 });
+        gsap.from(".btn", { opacity: 0, y: 20, duration: 0.8, stagger: 0.2, delay: 0.4 });
+    </script>
+</body>
+</html>

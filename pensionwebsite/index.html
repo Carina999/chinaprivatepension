@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Your Pension Adventure</title>
+    <style>
+        /* Minified Tailwind CSS subset for mobile optimization */
+        *,::before,::after{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}html{line-height:1.5;-webkit-text-size-adjust:100%}body{margin:0;min-height:100vh;font-family:Inter,sans-serif;background:linear-gradient(135deg,#e0f2fe,#f3e8ff);display:flex;justify-content:center;align-items:center;color:#1f2937}h1,h2{font-weight:700}.container{max-width:1280px;margin-left:auto;margin-right:auto;padding:1rem}.text-center{text-align:center}.text-4xl{font-size:2.25rem;line-height:2.5rem}@media (max-width:640px){.text-4xl{font-size:1.875rem}}.font-extrabold{font-weight:800}.text-gray-800{color:#1f2937}.mb-4{margin-bottom:1rem}.mb-8{margin-bottom:2rem}.drop-shadow-lg{filter:drop-shadow(0 10px 8px rgba(0,0,0,0.04))}.text-base{font-size:1rem;line-height:1.5rem}@media (max-width:640px){.text-base{font-size:.875rem}}.text-lg{font-size:1.125rem;line-height:1.75rem}.opacity-90{opacity:.9}.flex{display:flex}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-center{justify-content:center}.gap-6{gap:1.5rem}.bg-white{background-color:#fff}.p-6{padding:1.5rem}.p-4{padding:1rem}.rounded-xl{border-radius:.75rem}.shadow-lg{box-shadow:0 10px 15px -3px rgba(0,0,0,0.1)}.text-blue-600{color:#2563eb}.font-bold{font-weight:700}.text-gray-600{color:#4b5563}.bg-blue-100{background-color:#dbeafe}.bg-purple-100{background-color:#f3e8ff}.w-full{width:100%}.max-w-md{max-width:28rem}.mx-auto{margin-left:auto;margin-right:auto}.mt-12{margin-top:3rem}.btn{background:#60a5fa;color:#fff;padding:.75rem 1.5rem;border-radius:9999px;font-weight:600;transition:background .3s ease}.btn:hover{background:#3b82f6}.grid{display:grid}.gap-4{gap:1rem}.sm\\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}a{text-decoration:none}@media (min-width:640px){.sm\\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+</head>
+<body>
+    <div class="container flex flex-col items-center">
+        <!-- Header -->
+        <h1 class="text-4xl font-extrabold text-center text-gray-800 mb-4 drop-shadow-lg">
+            🤑 Welcome to Your Pension Adventure! 🚀
+        </h1>
+        <p class="text-center text-lg text-gray-600 mb-8 opacity-90">
+            Hey Gen Z! Ready to make retirement as epic as your favorite game? Dive into pensions and plan a future that’s all vibes! 😎
+        </p>
+
+        <!-- Feature Sections -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-4xl">
+            <!-- Products Section -->
+            <div class="bg-white p-6 rounded-xl shadow-lg max-w-md mx-auto text-center">
+                <h2 class="text-2xl font-bold text-blue-600 mb-4">Discover Pension Products 📈</h2>
+                <p class="text-base text-gray-600 mb-4">
+                    Curious about your retirement options? Explore four awesome pension products—Savings, Funds, Wealth Management, and Insurance—to find your perfect match! From chill vibes to high-growth thrills, we’ve got you covered. 🌟
+                </p>
+                <a href="products.html" class="btn w-full">Check Out Products! 🎉</a>
+            </div>
+
+            <!-- Simulation Section -->
+            <div class="bg-white p-6 rounded-xl shadow-lg max-w-md mx-auto text-center">
+                <h2 class="text-2xl font-bold text-blue-600 mb-4">Play the Pension Quest 🎮</h2>
+                <p class="text-base text-gray-600 mb-4">
+                    Test your pension smarts in a fun life simulation! Flip cards to navigate twists like lottery wins or job losses, and see how pensions save the day. Can you score a luxe retirement? Try now! 🏖️
+                </p>
+                <a href="simulation.html" class="btn w-full">Start the Quest! 🚀</a>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="text-center mt-12">
+            <p class="text-gray-600 text-base mb-4">
+                Your dream retirement is just a click away! Let’s make financial planning as cool as your favorite app. 😍
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="products.html" class="btn">Explore Products 📊</a>
+                <a href="simulation.html" class="btn">Play the Game 🎴</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Animate sections on load
+        gsap.from("h1", { opacity: 0, y: -20, duration: 0.8 });
+        gsap.from("p", { opacity: 0, y: 20, duration: 0.8, delay: 0.2 });
+        gsap.from(".bg-white", { opacity: 0, y: 50, duration: 0.8, stagger: 0.2, delay: 0.4 });
+        gsap.from(".btn", { opacity: 0, scale: 0.8, duration: 0.8, stagger: 0.2, delay: 0.6 });
+    </script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pension Quest: Your Life Adventure</title>
+    <style>
+        /* Minified Tailwind CSS subset for mobile optimization */
+        *,::before,::after{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}html{line-height:1.5;-webkit-text-size-adjust:100%}body{margin:0;min-height:100vh;font-family:Inter,sans-serif;background:linear-gradient(135deg,#e0f2fe,#f3e8ff);display:flex;justify-content:center;align-items:center;color:#1f2937}h1,h2{font-weight:700}.container{max-width:1280px;margin-left:auto;margin-right:auto;padding:1rem}.text-center{text-align:center}.text-3xl{font-size:1.875rem;line-height:2.25rem}@media (max-width:640px){.text-3xl{font-size:1.5rem}}.font-extrabold{font-weight:800}.text-white{color:#fff}.mb-4{margin-bottom:1rem}.mb-8{margin-bottom:2rem}.drop-shadow-lg{filter:drop-shadow(0 10px 8px rgba(0,0,0,0.04))}.text-base{font-size:1rem;line-height:1.5rem}@media (max-width:640px){.text-base{font-size:.875rem}}.opacity-90{opacity:.9}.flex{display:flex}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-center{justify-content:center}.gap-4{gap:1rem}.bg-white{background-color:#fff}.p-4{padding:1rem}.p-2{padding:.5rem}.rounded-xl{border-radius:.75rem}.shadow-lg{box-shadow:0 10px 15px -3px rgba(0,0,0,0.1)}.text-blue-600{color:#2563eb}.font-bold{font-weight:700}.text-gray-600{color:#4b5563}.card{transition:transform .3s ease,box-shadow .3s ease;cursor:pointer;background:rgba(255,255,255,.95)}.card:hover{transform:scale(1.05);box-shadow:0 10px 20px rgba(0,0,0,.2)}.card-gray{filter:grayscale(100%);opacity:.5;pointer-events:none}.mt-8{margin-top:2rem}.btn{background:#60a5fa;color:#fff;padding:.75rem 1.5rem;border-radius:9999px;font-weight:600;transition:background .3s ease}.btn:hover{background:#3b82f6}.w-full{width:100%}.max-w-md{max-width:28rem}.relative{position:relative}.absolute{position:absolute}.path-bg{background:linear-gradient(180deg,#5d86bc,#fff);width:100%;height:100%;top:0;left:0;opacity:.2}.path-line{border-left:4px dashed #6b7280;height:100%;position:absolute;left:50%;transform:translateX(-50%)}@media (max-width:640px){.path-line{border-left-width:2px}}.hidden{display:none}
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+</head>
+<body>
+    <div class="container relative">
+        <!-- Life Path Background -->
+        <div class="path-bg absolute">
+            <div class="path-line"></div>
+        </div>
+
+        <!-- Header -->
+        <h1 class="text-3xl font-extrabold text-center text-black mb-4 drop-shadow-lg">
+            Pension Quest: Your Life Adventure! 
+        </h1>
+        <p class="text-center text-base text-black mb-8 opacity-90">
+            Flip cards to navigate life’s twists and see how private pensions save the day! 😎
+        </p>
+
+        <!-- Stage 1: Early Career -->
+        <div id="stage1" class="stage flex flex-col items-center mb-8">
+            <h2 class="text-2xl font-bold text-blue-600 mb-4">Early Career (25-40) 👶</h2>
+            <p class="text-gray-600 mb-4">Pick a card to shape your future!</p>
+            <div class="flex gap-4">
+                <div class="card p-4 rounded-xl shadow-lg max-w-md" onclick="revealCard(1, 'lottery')">
+                    <p class="text-base font-bold">Life Event 🎴</p>
+                    <p class="text-gray-600">Flip to find out!</p>
+                </div>
+                <div class="card p-4 rounded-xl shadow-lg max-w-md" onclick="revealCard(1, 'jobLoss')">
+                    <p class="text-base font-bold">Life Event 🎴</p>
+                    <p class="text-gray-600">Flip to find out!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stage 2: Wealth Accumulation -->
+        <div id="stage2" class="stage flex flex-col items-center mb-8 hidden">
+            <h2 class="text-2xl font-bold text-blue-600 mb-4">Wealth Accumulation (40-60) 💼</h2>
+            <p class="text-gray-600 mb-4">Another twist awaits—choose wisely!</p>
+            <div class="flex gap-4">
+                <div class="card p-4 rounded-xl shadow-lg max-w-md" onclick="revealCard(2, 'sideHustle')">
+                    <p class="text-base font-bold">Life Event 🎴</p>
+                    <p class="text-gray-600">Flip to find out!</p>
+                </div>
+                <div class="card p-4 rounded-xl shadow-lg max-w-md" onclick="revealCard(2, 'inflation')">
+                    <p class="text-base font-bold">Life Event 🎴</p>
+                    <p class="text-gray-600">Flip to find out!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stage 3: Post-Retirement -->
+        <div id="stage3" class="stage flex flex-col items-center mb-8 hidden">
+            <h2 class="text-2xl font-bold text-blue-600 mb-4">Post-Retirement (60+) 🏖️</h2>
+            <p class="text-gray-600 mb-4">One last adventure—pick your card!</p>
+            <div class="flex gap-4">
+                <div class="card p-4 rounded-xl shadow-lg max-w-md" onclick="revealCard(3, 'housingCrash')">
+                    <p class="text-base font-bold">Life Event 🎴</p>
+                    <p class="text-gray-600">Flip to find out!</p>
+                </div>
+                <div class="card p-4 rounded-xl shadow-lg max-w-md" onclick="revealCard(3, 'illness')">
+                    <p class="text-base font-bold">Life Event 🎴</p>
+                    <p class="text-gray-600">Flip to find out!</p>
+                </div>
+            </div>
+            <div id="result3" class="mt-8 text-center hidden">
+                <a href="share.html" class="btn mt-4 inline-block">See Your Retirement Score! 🎉</a>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="flex justify-center gap-4 mt-8">
+            <a href="index.html" class="btn">Back to Home 🏠</a>
+            <a href="products.html" class="btn">Explore Products 📈</a>
+        </div>
+    </div>
+
+    <script>
+        let events = [];
+        let eventIncomes = [];
+        const eventData = {
+            1: {
+                lottery: {
+                    name: "Lottery Win",
+                    details: "🎉 You hit the lottery jackpot! Thanks to your private pension plan, you snag a zero-fee pension fund deal!",
+                    income: 4000
+                },
+                jobLoss: {
+                    name: "Job Loss",
+                    details: "😢 Job loss stings, but your pension plan saves the day! If you qualify for unemployment benefits, you can tap your pension early. ",
+                    income: 1000
+                }
+            },
+            2: {
+                sideHustle: {
+                    name: "Side Hustle Success",
+                    details: "🚀 Your side hustle goes viral! With your pension plan’s long-term investments, you pour extra cash into top funds with very low fee!",
+                    income: 3000
+                },
+                inflation: {
+                    name: "Tax Policy Adjustment",
+                    details: "Your salary increases as you become a leader, but a policy adjustment raises your income tax rate to 80%. (Because you’ve contributed to a private pension plan, you’re unaffected—you only need to pay a 3% tax rate on it before retirement.)",
+                    income: 0
+                }
+            },
+            3: {
+                housingCrash: {
+                    name: "Housing Market Crash",
+                    details: "🏘️ Housing market crashes, but you’re financially free! Your private pension’s steady cash flow keeps your retirement chill!",
+                    income: 1000
+                },
+                illness: {
+                    name: "Medical Cost Surge",
+                    details: "🤒 Medical costs soar, but your private pension insurance covers health risks! Your savings stay untouched, and your pension keeps flowing!",
+                    income: 0
+                }
+            }
+        };
+
+        function revealCard(stage, event) {
+            const cards = document.querySelectorAll(`#stage${stage} .card`);
+            const resultDiv = document.getElementById(`result${stage}`);
+            
+            // Store event and income
+            events[stage - 1] = eventData[stage][event].name;
+            eventIncomes[stage - 1] = eventData[stage][event].income;
+            
+            // Update card content
+            cards.forEach(card => {
+                if (card.onclick.toString().includes(event)) {
+                    card.innerHTML = `
+                        <p class="text-base font-bold">${eventData[stage][event].name}</p>
+                        <p class="text-sm">${eventData[stage][event].details}</p>
+                        <p class="text-sm text-blue-600">+¥${eventData[stage][event].income}/month in retirement</p>
+                    `;
+                } else {
+                    card.classList.add('card-gray');
+                }
+            });
+            
+            // Show result div (for button in stage 3) and animate
+            if (stage === 3) {
+                resultDiv.classList.remove('hidden');
+                gsap.from(resultDiv, { opacity: 0, y: 20, duration: 0.5 });
+            }
+            
+            // Show next stage
+            if (stage < 3) {
+                const nextStage = document.getElementById(`stage${stage + 1}`);
+                nextStage.classList.remove('hidden');
+                gsap.from(nextStage, { opacity: 0, y: 50, duration: 0.8 });
+            }
+            
+            // Save events and incomes for share.html
+            if (stage === 3) {
+                localStorage.setItem('pensionEvents', JSON.stringify(events));
+                localStorage.setItem('pensionIncomes', JSON.stringify(eventIncomes));
+            }
+        }
+
+        // Animate stages on load
+        gsap.from(".stage", { opacity: 0, y: 50, duration: 0.8, stagger: 0.2 });
+    </script>
+</body>
+</html>
